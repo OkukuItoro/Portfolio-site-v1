@@ -32,7 +32,11 @@ const Footer = () => {
       </LinkList>
       <SocialIconsContainer>
         <CompanyContainer>
-          <Slogan>Innovating one project at a time</Slogan>
+          <Slogan>
+            Building software projects that harmonize functionality, design, and
+            innovation, with the sole purpose of delivering exceptional
+            results."
+          </Slogan>
         </CompanyContainer>
         <SocialContainer>
           <SocialIcons href="https://github.com/OkukuItoro">

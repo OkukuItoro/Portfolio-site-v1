@@ -1,5 +1,5 @@
-import React from "react";
-import { DiFirebase, DiReact, DiDocker } from "react-icons/di";
+import React, { useState } from "react";
+import TechIcons from "./TechIcons";
 
 import {
   StackItem,
@@ -11,10 +11,10 @@ import {
 const Stack = ({ stack }) => {
   return (
     <>
-      {stack.map((stackItem) => (
-        <StackItem>
+      {stack.map((stackItem, i) => (
+        <StackItem key={i}>
           <div style={{ display: "flex", alignItems: "center" }}>
-            <DiReact size="2rem" />
+            <TechIcons icon={stackItem.name} />
             <StackText>{stackItem.name}</StackText>
           </div>
           <ExpLevelContainer>

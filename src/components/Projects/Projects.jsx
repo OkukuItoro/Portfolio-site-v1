@@ -35,7 +35,6 @@ const Projects = () => {
 
   return (
     <Section nopadding id="projects">
-      <SectionDivider />
       <div
         style={{
           display: "flex",
@@ -64,6 +63,7 @@ const Projects = () => {
           )}
         </div>
       </div>
+      <SectionDivider style={{ marginBottom: "4rem" }} />
       <FlexContainer>
         {projects.map(
           ({ id, image, title, description, tags, source, visit }) => (

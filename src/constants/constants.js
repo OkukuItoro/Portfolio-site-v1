@@ -56,6 +56,7 @@ export const projects = [
       { name: "React.js", color: "#8dc0f7", textColor: "blue" },
       { name: "SCSS/SASS", color: "#fc9fa8", textColor: "#db1226" },
       { name: "Strapi", color: "#1b07f5", textColor: "#fff" },
+      { name: "Node.js", color: "#8bf4fc", textColor: "#0b484d" },
       { name: "Postgresql", color: "#c0e4fc", textColor: "blue" },
       { name: "Stripe", color: "purple", textColor: "#fff" },
       { name: "Redux", color: "#fcc0f1", textColor: "purple" },
@@ -68,29 +69,36 @@ export const projects = [
 
 export const frontendStack = [
   { name: "JS | TS", exp: 90 },
-  { name: "React.js | Next.js", exp: 83 },
-  { name: "Tailwind | SASS/SCSS", exp: 72 },
+  {
+    name: "React.js | Next.js",
+    exp: 83,
+  },
+  {
+    name: "Tailwind | SASS/SCSS",
+    exp: 72,
+  },
   { name: "Apollo Client", exp: 85 },
   { name: "Jest & RTL", exp: 75 },
-  { name: "Context API | Redux", exp: 89 },
+  { name: "Redux", exp: 89 },
 ];
 export const backendStack = [
-  { name: "Node | Express", exp: 85 },
+  { name: "Node.js", exp: 85 },
+  { name: "Postman", exp: 80 },
   { name: "Strapi", exp: 65 },
   { name: "MongoDB", exp: 83 },
   { name: "Postgres", exp: 85 },
   { name: "REST | GraphQL", exp: 80 },
 ];
 export const devopsStack = [
-  { name: "Docker", exp: 45 },
-  { name: "Kubernetes", exp: 52 },
-  { name: "GitLabs", exp: 42 },
-  { name: "AWS CodePipline", exp: 60 },
+  { name: "Docker", exp: 40 },
+  { name: "Kubernetes", exp: 42 },
+  { name: "GitLabs", exp: 38 },
+  { name: "AWS CodePipeline", exp: 50 },
 ];
-export const TimeLineData = [
-  { year: 2017, text: "Started my journey" },
-  { year: 2018, text: "Worked as a freelance developer" },
-  { year: 2019, text: "Founded JavaScript Mastery" },
-  { year: 2020, text: "Shared my projects with the world" },
-  { year: 2021, text: "Started my own platform" },
-];
+// export const TimeLineData = [
+//   { year: 2020, text: "Started my journey" },
+//   { year: 2021, text: "Worked as a freelance developer" },
+//   { year: 2022, text: "Participated in the ALX Full stack developer program" },
+//   { year: 2023, text: "Shared my projects with the world" },
+
+// ];
