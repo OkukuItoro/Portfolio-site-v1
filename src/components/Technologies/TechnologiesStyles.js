@@ -112,8 +112,9 @@ export const ListItem = styled.li`
 
   @media ${(props) => props.theme.breakpoints.sm} {
     margin-bottom: 14px;
-    max-width: 320px;
-    flex-direction: row;
+    /* max-width: 320px; */
+    max-width: 100%;
+    align-items: center;
   }
 `;
 

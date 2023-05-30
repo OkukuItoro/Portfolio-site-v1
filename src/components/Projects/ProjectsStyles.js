@@ -24,7 +24,7 @@ export const FlexContainer = styled.section`
   @media ${(props) => props.theme.breakpoints.sm} {
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding: 0.4rem;
     padding-bottom: 0;
   }
 `;
@@ -35,8 +35,13 @@ export const BlogCard = styled.div`
   width: 45%;
   margin: 1rem;
 
+  @media ${(props) => props.theme.breakpoints.md} {
+    width: 47%;
+  }
+
   @media ${(props) => props.theme.breakpoints.sm} {
     width: 100%;
+    margin: 0 0 2.5rem 0;
   }
 `;
 export const BlogCardFull = styled.div`
@@ -99,11 +104,20 @@ export const CardInfo = styled.p`
   width: 100%;
   padding: 0 50px;
   color: #e4e6e7;
-  font-style: 2rem;
+  /* font-size: 2rem; */
   line-height: 24px;
   text-align: start;
+
+  @media ${(props) => props.theme.breakpoints.md} {
+    padding: 0 20px;
+  }
+
   @media ${(props) => props.theme.breakpoints.sm} {
-    padding: 0.3rem;
+    padding: 0;
+    text-align: justify;
+    margin-left: 2rem;
+    font-size: 1.3rem;
+    width: 85%;
   }
 `;
 export const ListCardInfo = styled.p`
@@ -164,6 +178,11 @@ export const Tag = styled.li`
   border-radius: 2px;
   font-size: 1.5rem;
   margin: 1rem 1rem 0 1rem;
+
+  @media ${(props) => props.theme.breakpoints.md} {
+    margin: 0.4rem;
+    font-size: 1.2rem;
+  }
 `;
 export const LsTag = styled.li`
   padding: 0.5rem 1rem;

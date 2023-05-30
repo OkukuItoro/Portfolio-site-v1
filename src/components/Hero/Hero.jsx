@@ -6,7 +6,8 @@ import {
   SectionText,
   SectionTitle,
 } from "../../styles/GlobalComponents";
-import { LeftSection, HeroTextName, HeroButton } from "./HeroStyles";
+import { LeftSection, HeroTextName } from "./HeroStyles";
+import { ButtonBack } from "../../styles/GlobalComponents";
 
 const Hero = (props) => {
   const handleDownload = () => {
@@ -34,24 +35,10 @@ const Hero = (props) => {
           skills and expertise to create beautiful, functional, and
           user-friendly web applications.
         </SectionText>
-        <div
-          style={{
-            dislay: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <HeroButton
-            style={{ width: "18rem" }}
-            onClick={() => (window.location = "#projects")}
-          >
-            Learn More
-          </HeroButton>
-          <HeroButton onClick={handleDownload}>
-            <FaFileDownload size={15} style={{ marginRight: "1rem" }} />
-            Download Resume
-          </HeroButton>
-        </div>
+        <ButtonBack onClick={handleDownload}>
+          <FaFileDownload size={15} style={{ marginRight: "1rem" }} />
+          Download Resume
+        </ButtonBack>
       </LeftSection>
     </Section>
   );

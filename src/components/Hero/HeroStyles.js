@@ -51,13 +51,3 @@ export const HeroTextName = styled.h2`
     max-width: 100%;
   }
 `;
-
-export const HeroButton = styled.button`
-  background: linear-gradient(270deg, #13adc7 0%, #945dd6 100%);
-  border-radius: 40px;
-  color: white;
-  border: none;
-  padding: 1.5rem 2rem;
-  margin-right: 2rem;
-  cursor: pointer;
-`;

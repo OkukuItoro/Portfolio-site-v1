@@ -1,5 +1,9 @@
 import React from "react";
-import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
+import {
+  AiFillGithub,
+  AiFillTwitterCircle,
+  AiFillLinkedin,
+} from "react-icons/ai";
 
 import { SocialIcons } from "../Header/HeaderStyles";
 import {
@@ -34,20 +38,19 @@ const Footer = () => {
         <CompanyContainer>
           <Slogan>
             Building software projects that harmonize functionality, design, and
-            innovation, with the sole purpose of delivering exceptional
-            results."
+            innovation, with the sole purpose of delivering exceptional results.
           </Slogan>
         </CompanyContainer>
         <SocialContainer>
           <SocialIcons href="https://github.com/OkukuItoro">
             <AiFillGithub size="3rem" />
           </SocialIcons>
-          <SocialIcons href="https://linkedin.com">
+          <SocialIcons href="https://linkedin.com/in/patrick-okuku">
             <AiFillLinkedin size="3rem" />
           </SocialIcons>
-          {/* <SocialIcons href="https://twitter">
-          <AiFillTwitter size="3rem" />
-        </SocialIcons> */}
+          <SocialIcons href="https://twitter.com/OkukuItoro">
+            <AiFillTwitterCircle size="3rem" />
+          </SocialIcons>
         </SocialContainer>
       </SocialIconsContainer>
     </FooterWrapper>

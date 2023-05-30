@@ -13,10 +13,6 @@ import {
   ListParagraph,
   ListTitle,
   StackContainer,
-  StackItem,
-  StackText,
-  ExpLevelContainer,
-  ExpLevel,
 } from "./TechnologiesStyles";
 
 import {

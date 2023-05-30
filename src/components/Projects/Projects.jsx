@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { BsViewList, BsGrid } from "react-icons/bs";
 import {
@@ -31,7 +31,20 @@ import {
 import { projects } from "../../constants/constants";
 
 const Projects = () => {
-  const [view, setView] = useState("list");
+  const [view, setView] = useState("grid");
+  const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    function handleResize() {
+      setViewportWidth(window.innerWidth);
+    }
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <Section nopadding id="projects">
@@ -48,18 +61,22 @@ const Projects = () => {
             padding: "6rem 2rem 2rem 2rem",
           }}
         >
-          {view === "list" ? (
-            <BsViewList
-              onClick={() => setView("grid")}
-              size={30}
-              style={{ cursor: "pointer" }}
-            />
+          {viewportWidth > 990 ? (
+            view === "list" ? (
+              <BsViewList
+                onClick={() => setView("grid")}
+                size={30}
+                style={{ cursor: "pointer" }}
+              />
+            ) : (
+              <BsGrid
+                onClick={() => setView("list")}
+                size={30}
+                style={{ cursor: "pointer" }}
+              />
+            )
           ) : (
-            <BsGrid
-              onClick={() => setView("list")}
-              size={30}
-              style={{ cursor: "pointer" }}
-            />
+            <BsGrid size={30} />
           )}
         </div>
       </div>
@@ -93,7 +110,7 @@ const Projects = () => {
                   </div>
                   <LinkBox>
                     <ExternalLinks href={visit}>Code</ExternalLinks>
-                    <ExternalLinks href={source}>Source</ExternalLinks>
+                    <ExternalLinks href={source}>Visit</ExternalLinks>
                   </LinkBox>
                 </BlogCard>
               ) : (
