@@ -30,15 +30,15 @@ import {
 import { projects } from "../../constants/constants";
 
 const Projects = () => {
-  let vwWidth = window.innerWidth;
   const [view, setView] = useState("grid");
-  const [viewportWidth, setViewportWidth] = useState(vwWidth);
+  const [viewportWidth, setViewportWidth] = useState(0);
+
+  function handleResize() {
+    setViewportWidth(window.innerWidth);
+  }
 
   useEffect(() => {
-    function handleResize() {
-      setViewportWidth(window.innerWidth);
-    }
-
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => {
