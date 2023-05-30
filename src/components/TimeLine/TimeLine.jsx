@@ -15,7 +15,7 @@ import {
 // import { TimeLineData } from "../../constants/constants";
 
 const Timeline = () => {
-  const [viewportWidth, setViewportWidth] = useState(Window.innerWidth);
+  const [viewportWidth, setViewportWidth] = useState(0);
 
   useEffect(() => {
     function handleResize() {
