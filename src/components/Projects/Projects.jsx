@@ -8,7 +8,6 @@ import {
   CardInfo,
   ListCardInfo,
   ExternalLinks,
-  LsExternalLinks,
   FlexContainer,
   HeaderThree,
   Hr,
@@ -31,8 +30,9 @@ import {
 import { projects } from "../../constants/constants";
 
 const Projects = () => {
+  let vwWidth = window.innerWidth;
   const [view, setView] = useState("grid");
-  const [viewportWidth, setViewportWidth] = useState(0);
+  const [viewportWidth, setViewportWidth] = useState(vwWidth);
 
   useEffect(() => {
     function handleResize() {
@@ -62,15 +62,15 @@ const Projects = () => {
           }}
         >
           {viewportWidth > 990 ? (
-            view === "list" ? (
-              <BsViewList
-                onClick={() => setView("grid")}
+            view === "grid" ? (
+              <BsGrid
+                onClick={() => setView("list")}
                 size={30}
                 style={{ cursor: "pointer" }}
               />
             ) : (
-              <BsGrid
-                onClick={() => setView("list")}
+              <BsViewList
+                onClick={() => setView("grid")}
                 size={30}
                 style={{ cursor: "pointer" }}
               />
@@ -85,7 +85,70 @@ const Projects = () => {
         {projects.map(
           ({ id, image, title, description, tags, source, visit }) => (
             <>
-              {view === "grid" ? (
+              {viewportWidth > 990 ? (
+                view === "grid" ? (
+                  <BlogCard key={id}>
+                    <Img src={image} />
+                    <TitleContent>
+                      <HeaderThree title>{title}</HeaderThree>
+                      <Hr />
+                    </TitleContent>
+                    <CardInfo>{description}</CardInfo>
+                    <div>
+                      <TagList>
+                        {tags.map((tag, i) => (
+                          <Tag
+                            key={i}
+                            style={{
+                              backgroundColor: tag.color,
+                              color: tag.textColor,
+                            }}
+                          >
+                            {tag.name}
+                          </Tag>
+                        ))}
+                      </TagList>
+                    </div>
+                    <LinkBox>
+                      <ExternalLinks href={visit}>Code</ExternalLinks>
+                      <ExternalLinks href={source}>Visit</ExternalLinks>
+                    </LinkBox>
+                  </BlogCard>
+                ) : (
+                  <BlogCardFull key={id}>
+                    <ImgFull src={image} />
+                    <SubContainer>
+                      <ListTitleContent>
+                        <HeaderThree title>{title}</HeaderThree>
+                        <LsLinkBox>
+                          <ExternalLinks target="_blank" href={source}>
+                            source code
+                          </ExternalLinks>
+                          <ExternalLinks target="_blank" href={visit}>
+                            visit
+                          </ExternalLinks>
+                        </LsLinkBox>
+                      </ListTitleContent>
+                      <ListCardInfo>{description}</ListCardInfo>
+                      <div>
+                        <LsTagList>
+                          {tags.map((tag, i) => (
+                            <LsTag
+                              key={i}
+                              style={{
+                                backgroundColor: tag.color,
+                                color: tag.textColor,
+                              }}
+                            >
+                              {tag.name}
+                            </LsTag>
+                          ))}
+                        </LsTagList>
+                      </div>
+                    </SubContainer>
+                  </BlogCardFull>
+                )
+              ) : (
                 <BlogCard key={id}>
                   <Img src={image} />
                   <TitleContent>
@@ -113,39 +176,6 @@ const Projects = () => {
                     <ExternalLinks href={source}>Visit</ExternalLinks>
                   </LinkBox>
                 </BlogCard>
-              ) : (
-                <BlogCardFull key={id}>
-                  <ImgFull src={image} />
-                  <SubContainer>
-                    <ListTitleContent>
-                      <HeaderThree title>{title}</HeaderThree>
-                      <LsLinkBox>
-                        <ExternalLinks target="_blank" href={source}>
-                          source code
-                        </ExternalLinks>
-                        <ExternalLinks target="_blank" href={visit}>
-                          visit
-                        </ExternalLinks>
-                      </LsLinkBox>
-                    </ListTitleContent>
-                    <ListCardInfo>{description}</ListCardInfo>
-                    <div>
-                      <LsTagList>
-                        {tags.map((tag, i) => (
-                          <LsTag
-                            key={i}
-                            style={{
-                              backgroundColor: tag.color,
-                              color: tag.textColor,
-                            }}
-                          >
-                            {tag.name}
-                          </LsTag>
-                        ))}
-                      </LsTagList>
-                    </div>
-                  </SubContainer>
-                </BlogCardFull>
               )}
             </>
           )
