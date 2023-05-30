@@ -32,7 +32,7 @@ import { projects } from "../../constants/constants";
 
 const Projects = () => {
   const [view, setView] = useState("grid");
-  const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+  const [viewportWidth, setViewportWidth] = useState(Window.innerWidth);
 
   useEffect(() => {
     function handleResize() {
