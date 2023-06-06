@@ -62,7 +62,7 @@ export const projects = [
       { name: "Redux", color: "#fcc0f1", textColor: "purple" },
     ],
     source: "https://github.com/OkukuItoro/omo-jabari-client",
-    visit: "https://google.com",
+    visit: "https://omo-jabari.netlify.app",
     id: 3,
   },
 ];

@@ -122,10 +122,10 @@ const Projects = () => {
                         <HeaderThree title>{title}</HeaderThree>
                         <LsLinkBox>
                           <ExternalLinks target="_blank" href={source}>
-                            source code
+                            Code
                           </ExternalLinks>
                           <ExternalLinks target="_blank" href={visit}>
-                            visit
+                            Visit
                           </ExternalLinks>
                         </LsLinkBox>
                       </ListTitleContent>
