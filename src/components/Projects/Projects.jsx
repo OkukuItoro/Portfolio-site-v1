@@ -110,8 +110,12 @@ const Projects = () => {
                       </TagList>
                     </div>
                     <LinkBox>
-                      <ExternalLinks href={visit}>Code</ExternalLinks>
-                      <ExternalLinks href={source}>Visit</ExternalLinks>
+                      <ExternalLinks target="_blank" href={source}>
+                        Code
+                      </ExternalLinks>
+                      <ExternalLinks target="_blank" href={visit}>
+                        Visit
+                      </ExternalLinks>
                     </LinkBox>
                   </BlogCard>
                 ) : (
@@ -172,8 +176,12 @@ const Projects = () => {
                     </TagList>
                   </div>
                   <LinkBox>
-                    <ExternalLinks href={visit}>Code</ExternalLinks>
-                    <ExternalLinks href={source}>Visit</ExternalLinks>
+                    <ExternalLinks target="_blank" href={source}>
+                      Code
+                    </ExternalLinks>
+                    <ExternalLinks target="_blank" href={visit}>
+                      Visit
+                    </ExternalLinks>
                   </LinkBox>
                 </BlogCard>
               )}
